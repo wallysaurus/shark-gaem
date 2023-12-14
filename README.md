@@ -1,5 +1,6 @@
 # Laser Shark Game
 Low-Poly battle game made with the Godot game engine. More documentation soon to come.
+# Vision Statement
 ### Team Members
 | Username | Member | Role | Digital Portfolio |
 | :------ | :---- | :--- | :--------------: |
