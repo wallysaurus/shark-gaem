@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci7b0gs0h7s0f"]
+
+[ext_resource type="PackedScene" uid="uid://dl8srje43clh4" path="res://Xing Xing.gltf" id="1_nyhx8"]
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.56453)
+
+[node name="Xingxing" type="Node3D" parent="."]
+
+[node name="blockbench_export" parent="Xingxing" instance=ExtResource("1_nyhx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.593378, -4.29817)
