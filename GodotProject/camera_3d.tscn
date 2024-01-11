@@ -1,11 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7b0gs0h7s0f"]
 
-[ext_resource type="PackedScene" uid="uid://dl8srje43clh4" path="res://Xing Xing.gltf" id="1_nyhx8"]
+[ext_resource type="Script" path="res://LaserShark.gd" id="1_f13ln"]
+[ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 
-[node name="Camera3D" type="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.56453)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
-[node name="Xingxing" type="Node3D" parent="."]
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_f13ln")
+speed = null
 
-[node name="blockbench_export" parent="Xingxing" instance=ExtResource("1_nyhx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.593378, -4.29817)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ryshs")
+
+[node name="Shark" parent="." instance=ExtResource("1_lgioi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0945831, 0, 0.19456)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.892192, 0.451656, 0, -0.451656, 0.892192, 0.03, 1.591, 2)
