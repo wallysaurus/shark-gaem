@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=5 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="Script" path="res://LaserShark.gd" id="1_f13ln"]
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
+[ext_resource type="Script" path="res://SpringArm3D.gd" id="3_qqu3t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_f13ln")
-speed = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ryshs")
@@ -15,7 +15,11 @@ shape = SubResource("CapsuleShape3D_ryshs")
 [node name="Shark" parent="." instance=ExtResource("1_lgioi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0945831, 0, 0.19456)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="Shark"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44, 0.57, 0.095)
+script = ExtResource("3_qqu3t")
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="Shark/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 0.892192, 0.451656, 0, -0.451656, 0.892192, 0.03, 1.591, 2)
+keep_aspect = 0
+fov = 119.1
