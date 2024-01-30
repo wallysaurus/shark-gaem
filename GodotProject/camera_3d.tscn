@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=7 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="Script" path="res://LaserShark.gd" id="1_f13ln"]
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 [ext_resource type="Script" path="res://SpringArm3D.gd" id="3_qqu3t"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_yldkg"]
+[ext_resource type="Script" path="res://PlayerController.gd" id="5_lsy7m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
@@ -20,6 +22,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44,
 script = ExtResource("3_qqu3t")
 
 [node name="Camera3D" type="Camera3D" parent="Shark/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.892192, 0.451656, 0, -0.451656, 0.892192, 0.03, 1.591, 2)
+transform = Transform3D(1, 0, 0, 0, 0.925373, 0.379046, 0, -0.379046, 0.925373, -0.095, 0.559557, 2.31761)
 keep_aspect = 0
-fov = 119.1
+fov = 74.9937
+
+[node name="PhantomCameraHost" type="Node" parent="Shark/SpringArm3D/Camera3D"]
+script = ExtResource("4_yldkg")
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.925373, 0.379046, 0, -0.379046, 0.925373, -0.0945831, 1.12956, 2.95217)
+script = ExtResource("5_lsy7m")
