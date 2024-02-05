@@ -60,7 +60,7 @@ ease = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.499999, 0, -0.5, 0.866023, -0.0194088, 2.25688, 3.01476)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.499999, 0, -0.5, 0.866023, -0.0743217, 2.3188, 3.00621)
 current = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
@@ -68,7 +68,7 @@ script = ExtResource("1_b4nxi")
 
 [node name="PlayerPhantomCamera3D" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.499999, 0, -0.5, 0.866023, -0.0194088, 2.25688, 3.01476)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.499999, 0, -0.5, 0.866023, -0.0743217, 2.3188, 3.00621)
 script = ExtResource("2_whx47")
 priority_override = false
 priority = 10
@@ -89,7 +89,7 @@ camera_3D_resource = SubResource("Resource_bai5y")
 
 [node name="PlayerAimPhantomCamera3D" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.953716, -0.0104945, 0.300522, 0, 0.99939, 0.0348995, -0.300706, -0.0332842, 0.953135, 0.431374, 1.35423, 1.41338)
+transform = Transform3D(0.953716, -0.0104945, 0.300522, 0, 0.99939, 0.0348995, -0.300706, -0.0332842, 0.953135, 0.376461, 1.41615, 1.40483)
 script = ExtResource("2_whx47")
 priority_override = false
 priority = 0
@@ -109,7 +109,7 @@ camera_3D_resource = SubResource("Resource_yf1op")
 
 [node name="PlayerCharacterBody3D" type="CharacterBody3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999903, 0.0139622, 0, -0.0139622, 0.999903, 0, 0, 0, 1, -0.0194088, 0.506884, -0.0163251)
+transform = Transform3D(0.999903, 0.0139622, 0, -0.0139622, 0.999903, 0, 0, 0, 1, -0.0743217, 0.568799, -0.0248691)
 collision_layer = 2
 script = ExtResource("5_p60kr")
 metadata/_edit_group_ = true

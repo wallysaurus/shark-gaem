@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=8 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="Script" path="res://LaserShark.gd" id="1_f13ln"]
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 [ext_resource type="Script" path="res://SpringArm3D.gd" id="3_qqu3t"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_yldkg"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="5_lsy7m"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="6_apoac"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
@@ -16,19 +17,36 @@ shape = SubResource("CapsuleShape3D_ryshs")
 
 [node name="Shark" parent="." instance=ExtResource("1_lgioi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0945831, 0, 0.19456)
+script = ExtResource("5_lsy7m")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Shark"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44, 0.57, 0.095)
 script = ExtResource("3_qqu3t")
 
 [node name="Camera3D" type="Camera3D" parent="Shark/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.925373, 0.379046, 0, -0.379046, 0.925373, -0.095, 0.559557, 2.31761)
+transform = Transform3D(1, 0, 0, 0, 0.943456, 0.331485, 0, -0.331485, 0.943456, -0.095, 0.55956, 2.31761)
 keep_aspect = 0
-fov = 74.9937
 
 [node name="PhantomCameraHost" type="Node" parent="Shark/SpringArm3D/Camera3D"]
 script = ExtResource("4_yldkg")
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.925373, 0.379046, 0, -0.379046, 0.925373, -0.0945831, 1.12956, 2.95217)
-script = ExtResource("5_lsy7m")
+transform = Transform3D(1, 0, 0, 0, 0.943456, 0.331485, 0, -0.331485, 0.943456, -0.0945831, 1.12956, 2.95217)
+script = ExtResource("6_apoac")
+priority_override = false
+priority = 0
+follow_mode = 6
+follow_target = NodePath("../Shark")
+follow_parameters/spring_arm/spring_length = 1.0
+follow_parameters/spring_arm/collision_mask = 1
+follow_parameters/spring_arm/shape = null
+follow_parameters/spring_arm/margin = 0.01
+follow_parameters/target_offset = Vector3(0, 0, 0)
+follow_parameters/damping = false
+look_at_mode = 2
+look_at_target = NodePath("../Shark")
+look_at_parameters/look_at_target_offset = Vector3(0, 0, 0)
+tween_parameters = null
+tween_on_load = true
+inactive_update_mode = 0
+camera_3D_resource = null
