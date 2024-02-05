@@ -10,4 +10,4 @@ Within the game we are creating, we are making a game with animal interaction wi
 | @adaryrios06 | Adary Rios | Release Manager | [Click Here](https://codermerlin.academy/users/adary-rios/Digital%20Portfolio/CS-II/index.html) |
 | @IsaacR123 | Isaac Rose | UI/UX Designer | [Click Here](https://codermerlin.academy/users/isaac-rose/Digital%20Portfolio/CS-II/index.html) | 
 | @olubi-shobo | Olubi Shobowale | Product Manager | [Click Here](https://codermerlin.academy/users/olubi-shobowale/Digital%20Portfolio/index.html) |
-| @nathanfaybysh | Nathan Faybysh | Project Manager / Quality Assurance | [Click Here](https://codermerlin.academy/users/nathan-faybysh/Digital%20Portfolio/index.html) |
+| @nathanfaybysh | Nathan Faybysh | Project Manager // Quality Assurance | [Click Here](https://codermerlin.academy/users/nathan-faybysh/Digital%20Portfolio/index.html) |
