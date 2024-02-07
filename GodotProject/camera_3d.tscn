@@ -9,43 +9,45 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Root" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0118828)
 script = ExtResource("1_f13ln")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.351029)
 shape = SubResource("CapsuleShape3D_ryshs")
 
-[node name="Shark" parent="." instance=ExtResource("1_lgioi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0945831, 0, 0.19456)
+[node name="Shark" parent="CharacterBody3D" instance=ExtResource("1_lgioi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0945831, 0, 0.219406)
 script = ExtResource("5_lsy7m")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Shark"]
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/Shark"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44, 0.57, 0.095)
 script = ExtResource("3_qqu3t")
 
-[node name="Camera3D" type="Camera3D" parent="Shark/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.943456, 0.331485, 0, -0.331485, 0.943456, -0.095, 0.55956, 2.31761)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.998464, -0.0152516, 0.0532624, 0, 0.961359, 0.275284, -0.0554033, -0.274861, 0.959882, 0.186951, 0.966246, 3.00627)
 keep_aspect = 0
 
-[node name="PhantomCameraHost" type="Node" parent="Shark/SpringArm3D/Camera3D"]
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("4_yldkg")
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.943456, 0.331485, 0, -0.331485, 0.943456, -0.0945831, 1.12956, 2.95217)
+transform = Transform3D(0.998464, -0.0152516, 0.0532624, 0, 0.961359, 0.275284, -0.0554033, -0.274861, 0.959882, 0.186951, 0.966246, 3.00627)
 script = ExtResource("6_apoac")
 priority_override = false
-priority = 0
+priority = 345
 follow_mode = 6
-follow_target = NodePath("../Shark")
-follow_parameters/spring_arm/spring_length = 1.0
+follow_target = NodePath("../CharacterBody3D/CollisionShape3D")
+follow_parameters/spring_arm/spring_length = 3.51
 follow_parameters/spring_arm/collision_mask = 1
 follow_parameters/spring_arm/shape = null
 follow_parameters/spring_arm/margin = 0.01
 follow_parameters/target_offset = Vector3(0, 0, 0)
 follow_parameters/damping = false
-look_at_mode = 2
-look_at_target = NodePath("../Shark")
-look_at_parameters/look_at_target_offset = Vector3(0, 0, 0)
+look_at_mode = 0
 tween_parameters = null
 tween_on_load = true
 inactive_update_mode = 0
