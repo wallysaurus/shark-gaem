@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=14 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 [ext_resource type="Script" path="res://PlayerMovement.gd" id="3_ccdf4"]
@@ -18,13 +18,21 @@ size = Vector3(50, 1, 50)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryshs"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_rhxqh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0jr5"]
+albedo_color = Color(0.858824, 0, 0, 0.854902)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
 [node name="Root" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382835, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.998464, -0.0152516, 0.0532624, 0, 0.961359, 0.275284, -0.0554033, -0.274861, 0.959882, 0.187368, 1.26617, 3.11995)
 keep_aspect = 0
-fov = 74.0948
+fov = 74.9949
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("4_yldkg")
@@ -82,3 +90,12 @@ script = ExtResource("5_lsy7m")
 [node name="SpringArm3D" type="SpringArm3D" parent="RigidBody3D/Shark"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.45676, -0.0424623, 0.095)
 script = ExtResource("3_qqu3t")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16788, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(0.033436, 0, 0, 0, -4.05037e-09, -0.033436, 0, 0.0926617, -1.46153e-09, 0.0102243, -1.60711, -1.03639)
+mesh = SubResource("CylinderMesh_rhxqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_s0jr5")
