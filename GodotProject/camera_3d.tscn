@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=13 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 [ext_resource type="Script" path="res://PlayerMovement.gd" id="3_ccdf4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_yldkg"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="5_lsy7m"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="6_apoac"]
+[ext_resource type="PackedScene" uid="uid://cwyyh553mfmw7" path="res://Palm Tree.gltf" id="7_emeix"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ea2qi"]
 
@@ -24,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382835, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.998464, -0.0152516, 0.0532624, 0, 0.961359, 0.275284, -0.0554033, -0.274861, 0.959882, 0.187368, 1.26617, 3.11995)
 keep_aspect = 0
-fov = 74.0948
+fov = 73.9733
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("4_yldkg")
@@ -82,3 +83,18 @@ script = ExtResource("5_lsy7m")
 [node name="SpringArm3D" type="SpringArm3D" parent="RigidBody3D/Shark"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.45676, -0.0424623, 0.095)
 script = ExtResource("3_qqu3t")
+
+[node name="Palm Tree" parent="." instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17242, -0.375374, -9.99713)
+
+[node name="Palm Tree" parent="Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7732, -0.375374, 3.25142)
+
+[node name="Palm Tree" parent="Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.393, -0.375374, 12.457)
+
+[node name="Palm Tree" parent="Palm Tree/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4239, -0.375374, 3.25142)
+
+[node name="Palm Tree" parent="Palm Tree/Palm Tree/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 7.98241, -0.375374, -19.1807)
