@@ -105,17 +105,19 @@ transform = Transform3D(0.033436, 0, 0, 0, -4.05037e-09, -0.033436, 0, 0.0926617
 mesh = SubResource("CylinderMesh_rhxqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_s0jr5")
 
-[node name="Palm Tree" parent="." instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17242, -0.375374, -9.99713)
+[node name="Tree Node" type="Node" parent="."]
 
-[node name="Palm Tree" parent="Palm Tree" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7732, -0.375374, 3.25142)
+[node name="Palm Tree" parent="Tree Node" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17242, 0.00746101, -9.99713)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.393, -0.375374, 12.457)
+[node name="Palm Tree2" parent="Tree Node" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9456, -0.367913, -6.74571)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4239, -0.375374, 3.25142)
+[node name="Palm Tree3" parent="Tree Node" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4474, -0.743287, 5.71129)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
-transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 7.98241, -0.375374, -19.1807)
+[node name="Palm Tree4" parent="Tree Node" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97652, -1.11866, 8.96271)
+
+[node name="Palm Tree5" parent="Tree Node" instance=ExtResource("7_emeix")]
+transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 6.00589, -1.49403, -10.218)
