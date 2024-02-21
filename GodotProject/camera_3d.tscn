@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://PlayerController.gd" id="5_lsy7m"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="6_apoac"]
 [ext_resource type="PackedScene" uid="uid://cwyyh553mfmw7" path="res://Palm Tree.gltf" id="7_emeix"]
+[ext_resource type="PackedScene" uid="uid://byt21qlf4owkv" path="res://island.model.gltf" id="8_dyeb3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ea2qi"]
 
@@ -110,14 +111,41 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s0jr5")
 [node name="Palm Tree" parent="Tree Node" instance=ExtResource("7_emeix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17242, 0.00746101, -9.99713)
 
-[node name="Palm Tree2" parent="Tree Node" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9456, -0.367913, -6.74571)
+[node name="Palm Tree2" parent="Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7732, -0.375374, 3.25142)
 
-[node name="Palm Tree3" parent="Tree Node" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4474, -0.743287, 5.71129)
+[node name="Palm Tree" parent="Palm Tree/Palm Tree2" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.393, -0.375374, 12.457)
 
-[node name="Palm Tree4" parent="Tree Node" instance=ExtResource("7_emeix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97652, -1.11866, 8.96271)
+[node name="Palm Tree" parent="Palm Tree/Palm Tree2/Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4239, -0.375374, 3.25143)
 
-[node name="Palm Tree5" parent="Tree Node" instance=ExtResource("7_emeix")]
-transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 6.00589, -1.49403, -10.218)
+[node name="Palm Tree" parent="Palm Tree/Palm Tree2/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
+transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 7.98241, -0.375374, -19.1807)
+
+[node name="Hill" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, 13.7201, -0.950188, 7.53316)
+
+[node name="Hill2" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, -12.8816, -0.950188, 15.3514)
+
+[node name="Hill3" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, -12.8816, -0.950188, -4.53803)
+
+[node name="Hill4" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, 7.42735, -0.950188, -4.53803)
+
+[node name="Hill5" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, 3.93532, -0.950188, 18.0999)
+
+[node name="Hill6" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, -0.561974, -0.950188, 6.20839)
+
+[node name="Hill7" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, 17.6602, -0.950188, 17.1813)
+
+[node name="Hill8" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, 17.6602, -0.950188, -10.2099)
+
+[node name="Hill9" parent="." instance=ExtResource("8_dyeb3")]
+transform = Transform3D(6.70732, 0, 0, 0, 3.21394, 0, 0, 0, 5.59629, -6.83947, -0.950188, -16.5173)
