@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci7b0gs0h7s0f"]
+[gd_scene load_steps=18 format=3 uid="uid://ci7b0gs0h7s0f"]
 
 [ext_resource type="PackedScene" uid="uid://jkaai1iigpt1" path="res://LaserShark.gltf" id="1_lgioi"]
 [ext_resource type="Script" path="res://PlayerMovement.gd" id="3_ccdf4"]
@@ -11,13 +11,17 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ea2qi"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6uotp"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_1n8ih"]
 size = Vector3(50, 1, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl4wy"]
 albedo_color = Color(0.8, 0.592157, 0.368627, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6uotp"]
+size = Vector3(49.4785, 1, 50.0921)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rvgg"]
+size = Vector3(1, 9.62158, 53.3422)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_olfwf"]
 
@@ -34,24 +38,40 @@ emission_energy_multiplier = 16.0
 [node name="Root" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382835, 0)
 
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 process_physics_priority = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83138, 0)
 physics_material_override = SubResource("PhysicsMaterial_ea2qi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_6uotp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.451168, 0)
 mesh = SubResource("BoxMesh_1n8ih")
 surface_material_override/0 = SubResource("StandardMaterial3D_cl4wy")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292053, 0, 0.0238953)
+shape = SubResource("BoxShape3D_6uotp")
+
+[node name="CollisionShape3DWall1" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2805, 4.41576, -0.091156)
+shape = SubResource("BoxShape3D_7rvgg")
+
+[node name="CollisionShape3DWall2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8184, 4.33452, 1.22457)
+shape = SubResource("BoxShape3D_7rvgg")
+
+[node name="CollisionShape3DWall3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.567562, 3.97379, -24.7412)
+shape = SubResource("BoxShape3D_7rvgg")
+
+[node name="CollisionShape3DWall4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.720676, 4.27314, 25.0209)
+shape = SubResource("BoxShape3D_7rvgg")
+
 [node name="Camera3D" type="Camera3D" parent="StaticBody3D"]
 transform = Transform3D(0.998464, -0.0152516, 0.0532624, 0, 0.961359, 0.275284, -0.0554033, -0.274861, 0.959882, 0.187368, 2.09755, 3.11995)
 keep_aspect = 0
-fov = 74.9642
+fov = 74.5347
 
 [node name="PhantomCameraHost" type="Node" parent="StaticBody3D/Camera3D"]
 script = ExtResource("4_yldkg")
@@ -93,16 +113,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s0jr5")
 [node name="Palm Tree" parent="Tree Node" instance=ExtResource("7_emeix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17242, 0.00746101, -9.99713)
 
-[node name="Palm Tree2" parent="Palm Tree" instance=ExtResource("7_emeix")]
+[node name="Palm Tree#Palm Tree2" parent="." instance=ExtResource("7_emeix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7732, -0.375374, 3.25142)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree2" instance=ExtResource("7_emeix")]
+[node name="Palm Tree_Palm Tree2#Palm Tree" parent="." instance=ExtResource("7_emeix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.393, -0.375374, 12.457)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree2/Palm Tree" instance=ExtResource("7_emeix")]
+[node name="Palm Tree_Palm Tree2_Palm Tree#Palm Tree" parent="." instance=ExtResource("7_emeix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4239, -0.375374, 3.25143)
 
-[node name="Palm Tree" parent="Palm Tree/Palm Tree2/Palm Tree/Palm Tree" instance=ExtResource("7_emeix")]
+[node name="Palm Tree_Palm Tree2_Palm Tree_Palm Tree#Palm Tree" parent="." instance=ExtResource("7_emeix")]
 transform = Transform3D(0.836898, -0.547359, 0, 0.547359, 0.836898, 0, 0, 0, 1, 7.98241, -0.375374, -19.1807)
 
 [node name="Hill" parent="." instance=ExtResource("8_dyeb3")]
