@@ -8,8 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	Player.apply_central_impulse(Input.get_action_strength("forward") * Vector3.FORWARD * 25.0 * delta)
-	Player.apply_central_impulse(Input.get_action_strength("left") * Vector3.LEFT * 25.0 * delta)
-	Player.apply_central_impulse(Input.get_action_strength("right") * Vector3.RIGHT * 25.0 * delta)
-	Player.apply_central_impulse(Input.get_action_strength("backward") * -Vector3.FORWARD * 25.0 * delta)
+	Player.move_and_collide(Input.get_action_strength("forward") * Vector3.FORWARD * 10.0 * delta)
+	Player.move_and_collide(Input.get_action_strength("left") * Vector3.LEFT * 10.0 * delta)
+	Player.move_and_collide(Input.get_action_strength("right") * Vector3.RIGHT * 10.0 * delta)
+	Player.move_and_collide(Input.get_action_strength("backward") * -Vector3.FORWARD * 10.0 * delta)
 	print(Player.global_position)
