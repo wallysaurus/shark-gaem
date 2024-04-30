@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygdubs5qd15f"]
+
+[ext_resource type="PackedScene" uid="uid://b8bvguwwiccow" path="res://glowrilla.gltf" id="1_oxr00"]
+[ext_resource type="Script" path="res://glowrilla.gd" id="2_2pn8d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gq71q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5de2r"]
+size = Vector3(0.782715, 1.43853, 1.37762)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.00451793, 0.546087, -0.837716, -0.00294509, 0.837728, 0.546079, 0.999985, 0, 0.00539308, -7.50362, 4.67143, 0.0608606)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_gq71q")
+gravity_scale = 0.0
+script = ExtResource("2_2pn8d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029103, 0.674887, 0.22903)
+shape = SubResource("BoxShape3D_5de2r")
+
+[node name="blockbench_export" parent="RigidBody3D" instance=ExtResource("1_oxr00")]
