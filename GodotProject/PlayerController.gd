@@ -1,16 +1,27 @@
 extends PhantomCamera3D
 
-@onready var pcam: PhantomCamera3D = get_node('../PhantomCamera3D')
-@export var mouse_sensitivity: float = 0.05
+@onready var pcam: PhantomCamera3D = get_node('../../PhantomCamera3D')
+@export var mouse_sensitivity: float = 0.5
 
 var min_yaw: float = -89.9
 var max_yaw: float = 50
 var min_pitch: float = 0
 var max_pitch: float = 360
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	elif event is InputEventMouseButton \
+		and event.button_index == MOUSE_BUTTON_LEFT \
+		and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
 func _unhandled_input(event) -> void:
-	if event is InputEventMouseMotion:
-		print('attempted movement')
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var pcam_rotation_degrees: Vector3
 
 		# Assigns the current 3D rotation of the SpringArm3D node - so it starts off where it is in the editor
