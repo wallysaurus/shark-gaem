@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bks4gcs733gcr"
+path="res://.godot/imported/shipwreck-kcasal.obj-a9cc9bdda59b6159283e4a9c69b15ecc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shipwreck-kcasal.obj-a9cc9bdda59b6159283e4a9c69b15ecc.mesh"]
+
+source_file="res://shipwreck-kcasal.obj"
+dest_files=["res://.godot/imported/shipwreck-kcasal.obj-a9cc9bdda59b6159283e4a9c69b15ecc.mesh", "res://.godot/imported/shipwreck-kcasal.obj-a9cc9bdda59b6159283e4a9c69b15ecc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
