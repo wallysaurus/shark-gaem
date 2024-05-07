@@ -187,7 +187,7 @@ transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_g6vks")
 
 [node name="Timer" type="Timer" parent="StaticBody3D"]
-wait_time = 0.151
+wait_time = 0.05
 autostart = true
 
 [connection signal="timeout" from="StaticBody3D/Timer" to="StaticBody3D" method="_on_timer_timeout"]
