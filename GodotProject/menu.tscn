@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh21plm25ox0"]
+[gd_scene load_steps=3 format=3 uid="uid://cj373xevpk8os"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_6blny"]
 
@@ -32,3 +32,11 @@ offset_right = 764.0
 offset_bottom = 403.0
 theme_override_font_sizes/font_size = 84
 text = "PLAY"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 163.0
+offset_right = 649.0
+offset_bottom = 201.0
+text = "you know you want to ;)"
