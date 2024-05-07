@@ -120,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382835, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999949, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 6.13248, 10.7902, 16.7038)
 keep_aspect = 0
-fov = 73.9812
+fov = 74.6339
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("4_yldkg")

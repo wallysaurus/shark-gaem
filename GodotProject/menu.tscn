@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh21plm25ox0"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_6blny"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yfjt8"]
+blend_mode = 1
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -22.0
+offset_right = -3.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6blny")
+
+[node name="StartButton" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_yfjt8")
+layout_mode = 2
+offset_left = 387.0
+offset_top = 231.0
+offset_right = 764.0
+offset_bottom = 403.0
+theme_override_font_sizes/font_size = 84
+text = "PLAY"
