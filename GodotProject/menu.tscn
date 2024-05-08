@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj373xevpk8os"]
+[gd_scene load_steps=11 format=3 uid="uid://cj373xevpk8os"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_6blny"]
+[ext_resource type="Theme" uid="uid://b3fbhp4h3qo6c" path="res://PlayButton.tres" id="2_8ypsl"]
+[ext_resource type="Texture2D" uid="uid://buispv31vyi2h" path="res://TitleBackground.png" id="2_r5b60"]
+[ext_resource type="Texture2D" uid="uid://c2nukkc13qnop" path="res://FishPlayButtonOff.png" id="3_sv4fg"]
+[ext_resource type="Texture2D" uid="uid://c5irie1yyntb1" path="res://FishPlayButtonOn.png" id="4_24dom"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yfjt8"]
-blend_mode = 1
-light_mode = 1
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfelo"]
+texture = ExtResource("3_sv4fg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yf00"]
+texture = ExtResource("4_24dom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcpj8"]
+texture = ExtResource("4_24dom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cohro"]
+texture = ExtResource("3_sv4fg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdfco"]
+texture = ExtResource("3_sv4fg")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,20 +34,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6blny")
 
-[node name="StartButton" type="Button" parent="."]
-material = SubResource("CanvasItemMaterial_yfjt8")
-layout_mode = 2
-offset_left = 387.0
-offset_top = 231.0
-offset_right = 764.0
-offset_bottom = 403.0
-theme_override_font_sizes/font_size = 84
-text = "PLAY"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(496, 331)
+scale = Vector2(10.6719, 10.6719)
+texture = ExtResource("2_r5b60")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 428.0
-offset_top = 163.0
-offset_right = 649.0
-offset_bottom = 201.0
-text = "you know you want to ;)"
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 365.0
+offset_top = 127.0
+offset_right = 808.0
+offset_bottom = 537.0
+theme = ExtResource("2_8ypsl")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxTexture_xfelo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1yf00")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bcpj8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cohro")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hdfco")
